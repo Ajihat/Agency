@@ -1,0 +1,198 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+html
+    scroll-behavior: smooth
+.landing
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    width: 100%
+    height: 100vh
+    background-image: url("../images/landing_bcg.jpg")
+    background-position: right center
+    background-repeat: no-repeat
+    z-index: -1
+    // filter: grayscale(80%)
+    &__inside
+        position: relative
+        height: 100vh
+        width: 1200px
+        margin: 0 20px
+        .landing__nav
+            height: 100px
+            nav
+                +positioning(flex,row,space-between,center,no-wrap)
+                width: 100%
+                height: 100%
+                .logo
+                    letter-spacing: 5px
+                    font-size: 28px
+                    i
+                        margin-left: 5px
+                        font-size: 24px
+                .menulist
+                    width: 800px
+                    ul
+                        +positioning(flex,row,space-between,center,no-wrap)
+                        width: 100%
+                        height: 100%
+                        li
+                            height: 50px
+                            list-style: none
+                            text-transform: uppercase
+                            font-size: 14px
+                            a
+                                position: relative
+                                display: block
+                                text-decoration: none
+                                color: black
+                                font-weight: 500
+                                width: 100%
+                                height: 100%
+                                line-height: 50px
+                                text-align: center
+                                letter-spacing: 2px
+                                transition: .3s
+                                &::after
+                                    content: ""
+                                    position: absolute
+                                    bottom: 0
+                                    right: 0
+                                    height: 2px
+                                    width: 0%
+                                    background-color: $lightblue
+                                    transition: .4s
+                                &:hover::after
+                                    width: 100%
+                                &:hover
+                                    color: $lightblue
+                .burger_menu
+                    display: none
+                    font-size: 28px
+        .motto
+            position: absolute
+            top: 50%
+            transform: translate(0,-50%)
+            max-width: 600px
+            h1
+                text-transform: uppercase
+                font-size: 78px
+                letter-spacing: 15px
+                line-height: 130%
+                font-weight: 500
+            p
+                font-size: 26px
+                line-height: 130%
+                margin-top: 20px
+                letter-spacing: 1px
+            button
+                +positioning(flex,row,space-between,center,no-wrap)
+                border: none
+                height: 45px
+                cursor: pointer
+                margin-top: 30px
+                &:hover p:first-child
+                    background-color: $darkblue
+                &:hover p:last-child i
+                    padding-left: 15px
+                p:first-child
+                    box-sizing: content-box
+                    width: 150px
+                    height: 100%
+                    background-color: $lightblue
+                    margin: 0
+                    padding: 0 10px
+                    color: white
+                    font-size: 14px
+                    letter-spacing: 2px
+                    text-transform: uppercase
+                    line-height: 45px
+                    transition: .3s
+                    font-weight: 500
+                p:last-child
+                    box-sizing: content-box
+                    width: 60px
+                    height: 100%
+                    background-color: $darkblue
+                    margin: 0
+                    color: white
+                    font-size: 14px
+                    line-height: 45px
+                    i
+                        transition: .3s
+        .icons
+            display: none
+            position: absolute
+            bottom: 15px
+            left: 50%
+            transform: translate(-50%,0)
+            i
+                font-size: 28px
+                margin: 5px
+                color: $darkblue
+@media (max-width: 1240px)
+    .landing
+        background-position: left center
+        &__inside
+            .motto
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                text-align: center
+                max-width: 600px
+                button
+                    margin: 30px auto 0px auto
+            .icons
+                display: block
+@media (max-width: 1010px)
+    .landing
+        &__inside
+            .landing__nav
+                nav
+                    .menulist
+                        display: none
+                    .burger_menu
+                        display: block
+@media (max-width: 600px)
+    .landing
+        &__inside
+            .motto
+                h1
+                    font-size: 68px
+                p
+                    font-size: 24px
+@media (max-width: 485px)
+    .landing
+        &__inside
+            .motto
+                h1
+                    font-size: 50px
+                    line-height: 120%
+                p
+                    font-size: 18px
+@media (max-width: 330px)
+    .landing
+        &__inside
+            .motto
+                h1
+                    font-size: 40px
+                    line-height: 120%
+                p
+                    font-size: 18px
+
+@media (max-width: 825px) and (orientation: landscape)
+    .landing
+        &__inside
+            .motto
+                width: 100%
+                top: 52%
+                h1
+                    font-size: 36px
+                    line-height: 120%
+                p
+                    font-size: 16px

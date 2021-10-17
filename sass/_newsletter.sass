@@ -1,0 +1,76 @@
+.newsletter
+    +positioning(flex,row,center,center,no-wrap)
+    background-color: $lightblue
+    &__inside
+        +positioning(flex,row,space-between,center,no-wrap)
+        height: 100%
+        width: 1200px
+        margin: 0 20px
+        padding: 40px 0
+        .newsletter__text
+            h3
+                text-transform: uppercase
+                font-size: 28px
+                line-height: 140%
+                letter-spacing: 5px
+                font-weight: 500
+                margin-bottom: 10px
+                color: white
+            p
+                color: white
+                font-size: 14px
+                letter-spacing: 1px
+                text-transform: uppercase
+                line-height: 160%
+        .newsletter__button
+            +positioning(flex,row,center,center,no-wrap)
+            button
+                +positioning(flex,row,space-between,center,no-wrap)
+                border: none
+                height: 40px
+                cursor: pointer
+                &:hover p:first-child, &:hover p:last-child
+                    background-color: white
+                    color: $darkblue
+                &:hover p:last-child i
+                    padding-left: 15px
+                p:first-child
+                    box-sizing: content-box
+                    width: 150px
+                    height: 100%
+                    background-color: $lightblue
+                    border: 1px solid white
+                    margin: 0
+                    padding: 0 10px
+                    color: white
+                    font-size: 14px
+                    letter-spacing: 2px
+                    text-transform: uppercase
+                    line-height: 40px
+                    transition: .3s
+                    font-weight: 500
+                p:last-child
+                    box-sizing: content-box
+                    width: 60px
+                    height: 100%
+                    background-color: $lightblue
+                    border: 1px solid white
+                    border-left: none
+                    transition: .3s
+                    margin: 0
+                    color: white
+                    font-size: 14px
+                    line-height: 40px
+                    i
+                        transition: color 0s, padding-left .3s
+
+@media (max-width: 847px) // 830px
+    .newsletter
+        &__inside
+            flex-wrap: wrap
+            text-align: center
+            .newsletter__text
+                width: 100%
+                margin-bottom: 30px
+            .newsletter__button
+                width: 100%

@@ -1,0 +1,129 @@
+.portfolio
+    +positioning(flex,row,center,center,no-wrap)
+    padding: 120px 0
+    background-color: white
+    &__inside
+        width: 1200px
+        margin: 0 20px
+        .portfolio__text
+            text-align: center
+            margin-bottom: 60px
+            h2
+                text-transform: uppercase
+                color: $lightblue
+                font-size: 22px
+                letter-spacing: 5px
+                font-weight: 500
+                margin-bottom: 10px
+            p
+                position: relative
+                text-transform: uppercase
+                font-size: 38px
+                letter-spacing: 5px
+                line-height: 140%
+                font-weight: 500
+                padding-bottom: 20px
+                margin-bottom: 40px
+                &::after
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    right: 50%
+                    transform: translate(50%,0)
+                    height: 2px
+                    width: 50px
+                    background-color: $lightblue
+            button
+                border: none
+                background-color: white
+                font-size: 15px
+                text-transform: uppercase
+                margin: 0 20px
+                letter-spacing: 5px
+                font-weight: 500
+                cursor: pointer
+                transition: color ,.2s
+        .portfolio__gallery
+            +positioning(flex,row,space-between,stretch,wrap)
+            height: 1460px
+            align-content: space-between
+            gap: 30px
+            .big
+                width: 790px
+                height: 500px
+                background-color: gray
+            .mid
+                width: 380px
+                height: 500px
+                background-color: gray
+            .small
+                width: 380px
+                height: 400px
+                background-color: gray
+            div:nth-child(1)
+                background-image: url("../images/portfolio/big_print_1.png")
+            div:nth-child(2)
+                background-image: url("../images/portfolio/mid_print_1.png")
+            div:nth-child(3)
+                background-image: url("../images/portfolio/mid_print_2.png")
+            div:nth-child(4)
+                background-image: url("../images/portfolio/small_dev_1.png")
+            div:nth-child(5)
+                background-image: url("../images/portfolio/mid_dev_1.png")
+            div:nth-child(6)
+                background-image: url("../images/portfolio/small_dev_2.png")
+            div:nth-child(7)
+                background-image: url("../images/portfolio/mid_dev_2.png")
+                position: relative
+                bottom: 100px
+            div:nth-child(8)
+                background-image: url("../images/portfolio/small_print_1.png")
+            div
+                cursor: pointer
+                overflow: hidden
+                border: 1px solid lightgray
+                transition: .4s
+
+.blue
+    color: $lightblue
+
+@media (max-width: 1257px) // 1240px
+    .portfolio
+        &__inside
+            width: 790px
+            .portfolio__gallery
+                div:nth-child(2), div:nth-child(5),div:nth-child(8)
+                    display: none
+
+@media (max-width: 847px) // 830px
+    .portfolio
+        &__inside
+            width: 380px
+            .portfolio__text
+                button
+                    margin-bottom: 15px
+                    letter-spacing: 3px
+            .portfolio__gallery
+                height: 1900px
+                div:nth-child(1)
+                    display: none
+                div:nth-child(7)
+                    bottom: 0
+
+@media (max-width: 437px) // 420px
+    .portfolio
+        &__inside
+            width: 100%
+            .portfolio__gallery
+                justify-content: center
+                .mid, .small
+                    width: 340px
+                    background-position: center
+
+@media (max-width: 397px) // 380px
+    .portfolio
+        &__inside
+            .portfolio__gallery
+                .mid, .small
+                    width: 320px
+                    background-position: center

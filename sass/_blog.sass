@@ -1,0 +1,147 @@
+.blog
+    +positioning(flex,row,center,center,no-wrap)
+    padding: 120px 0px
+    &__inside
+        width: 1200px
+        margin: 0 20px
+        .blog__text
+            text-align: center
+            margin-bottom: 60px
+            h2
+                text-transform: uppercase
+                color: $lightblue
+                font-size: 22px
+                letter-spacing: 5px
+                font-weight: 500
+                margin-bottom: 10px
+            p
+                position: relative
+                text-transform: uppercase
+                font-size: 38px
+                letter-spacing: 5px
+                font-weight: 500
+                line-height: 140%
+                padding-bottom: 20px
+                margin-bottom: 40px
+                &::after
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    right: 50%
+                    transform: translate(50%,0)
+                    height: 2px
+                    width: 50px
+                    background-color: $lightblue
+        .blog__content
+            +positioning(flex,row,space-between,center,wrap)
+            width: 1200px
+            .article
+                +positioning(flex,row,space-between,flex-start,no-wrap)
+                width: 600px
+                margin-bottom: 70px
+                transition: opacity .3s
+                opacity: 1
+                .article_date
+                    +positioning(flex,column,flex-start,center,no-wrap)
+                    width: 15%
+                    height: 100%
+                    padding: 25px 0
+                    background-color: $lightblue
+                    div
+                        p:first-child
+                            width: 100%
+                            color: white
+                            font-weight: 500
+                            font-size: 38px
+                            margin-bottom: 10px
+                        p:last-child
+                            color: white
+                            text-align: center
+                            letter-spacing: 5px
+                .article_text
+                    width: 85%
+                    padding: 0px 25px
+                    h3
+                        text-transform: uppercase
+                        letter-spacing: 5px
+                        font-weight: 500
+                        margin-bottom: 10px
+                        line-height: 150%
+                    p
+                        line-height: 150%
+                        color: $fontgray
+                        margin-bottom: 20px
+                    button
+                        border: none
+                        background-color: white
+                        font-size: 15px
+                        text-transform: uppercase
+                        letter-spacing: 5px
+                        color: $darkblue
+                        font-weight: 500
+                        cursor: pointer
+                        i
+                            transition: .3s
+                        &:hover i
+                            margin-left: 10px
+            .more
+                opacity: 0
+                transition: opacity .3s
+        button#blog_btn
+            position: relative
+            display: block
+            margin: 30px auto 0 auto
+            padding: 10px 0
+            border: none
+            background-color: white
+            font-size: 15px
+            text-transform: uppercase
+            letter-spacing: 3px
+            color: $darkblue
+            cursor: pointer
+            font-weight: 500
+            &::after
+                content: ""
+                position: absolute
+                height: 2px
+                bottom: 0
+                left: 50%
+                transform: translate(-50%, 0)
+                width: 25%
+                background-color: $darkblue
+                transition: .3s
+            &:hover::after
+                width: 100%
+
+@media (max-width: 1247px) // 1230px
+    .blog
+        &__inside
+            width: 100%
+            .blog__content
+                width: 100%
+                justify-content: center
+                .article
+                    width: 800px
+
+@media (max-width: 857px) // 840px
+    .blog
+        &__inside
+            .blog__content
+                .article
+                    width: 700px
+@media (max-width: 757px) // 740px
+    .blog
+        &__inside
+            .blog__content
+                .article
+                    width: 100%
+@media (max-width: 617px) // 600px
+    .blog
+        &__inside
+            .blog__content
+                .article
+                    .article_date
+                        width: 84px
+                    .article_text
+                        width: calc(100% - 84px)
+                        padding-right: 0px

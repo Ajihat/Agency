@@ -1,0 +1,163 @@
+.offer
+    position: relative
+    height: 640px
+    overflow: hidden
+    +positioning(flex,row,space-between,center,no-wrap)
+    &__color1
+        width: 75%
+        height: 100%
+        background-color: rgb(244,248,251)
+    &__color2
+        width: 25%
+        height: 100%
+        background-color: rgb(226,235,244)
+    &__inside
+        +positioning(flex,row,space-between,center,no-wrap)
+        position: absolute
+        width: 1200px
+        height: 400px
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        margin: 0 20px
+        .offer__text
+            +positioning(flex,column,space-between,flex-start,no-wrap)
+            height: 400px
+            width: 750px
+            &__wrapper
+                height: 200px
+                p:first-child
+                    text-transform: uppercase
+                    color: $lightblue
+                    font-size: 22px
+                    letter-spacing: 5px
+                    font-weight: 500
+                    margin-bottom: 10px
+                h2
+                    text-transform: uppercase
+                    font-size: 38px
+                    line-height: 140%
+                    letter-spacing: 5px
+                    font-weight: 500
+                    margin-bottom: 20px
+                p:nth-of-type(2)
+                    color: $fontgray
+                    margin-bottom: 20px
+                    line-height: 150%
+            &__icons
+                height: 200px
+                width: 100%
+                +positioning(flex,row,space-between,space-between,wrap)
+                div
+                    +positioning(flex,row,space-between,center,wrap)
+                    height: 100px
+                    width: 350px
+                    div:first-child
+                        height: 100px
+                        width: 62px
+                    div:last-child
+                        height: 100px
+                        width: 288px
+                        padding-left: 25px
+                        p:first-child
+                            text-transform: uppercase
+                            font-weight: 500
+                            letter-spacing: 5px
+                            margin-top: 10px
+                        p:last-child
+                            color: $fontgray
+                            line-height: 150%
+        .offer__img
+            position: relative
+            height: 100%
+            width: 450px
+            img
+                position: absolute
+                top: 50%
+                left: 20%
+                transform: translate(0,-50%)
+                border-radius: 20px
+                box-shadow: -1px 14px 16px 5px rgba(0,0,0,0.14)
+
+@media (max-width: 1367px) // 1350px
+    .offer
+        &__inside
+            .offer__img
+                img
+                    left: 10%
+
+@media (max-width: 1217px) // 1200px
+    .offer
+        height: 1049px
+        &__inside
+            width: 100%
+            height: auto
+            flex-wrap: wrap
+            padding: 120px 0 160px 0
+            margin: 0px
+            .offer__img
+                padding: 0 20px
+                height: 369px
+                width: 100%
+                img
+                    left: 50%
+                    top: 72%
+                    transform: translate(-50%,-50%)
+            .offer__text
+                justify-content: center
+                width: 100%
+                height: auto
+                padding: 0 20px
+                .offer__text__icons
+                    width: 80%
+                    align-self: center
+                .offer__text__wrapper
+                    text-align: center
+                    width: 100%
+                    p:nth-of-type(2)
+                        width: 80%
+                        margin: 0 auto
+
+@media (max-width: 987px) // 970px
+    .offer
+        &__inside
+            .offer__text
+                .offer__text__wrapper
+                    height: auto
+                    min-height: 200px
+                    p:nth-of-type(2)
+                        width: 100%
+                .offer__text__icons
+                    width: 100%
+
+@media (max-width: 756px) // 739px
+    .offer
+        height: 1249px
+        &__inside
+            .offer__text
+                .offer__text__icons
+                    height: 400px
+                    justify-content: center
+
+@media (max-width: 417px) // 400px
+    .offer
+        height: 1384px
+        &__inside
+            .offer__img
+                img
+                    top: 60%
+            .offer__text
+                .offer__text__wrapper
+                    margin-bottom: 15px
+                .offer__text__icons
+                    height: 520px
+                    div
+                        width: 100%
+                        height: 130px
+                        div:first-child
+                            width: 20%
+                            height: 100%
+                        div:last-child
+                            width: 80%
+                            height: 100%
+                            padding-left: 10px
