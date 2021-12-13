@@ -129,7 +129,7 @@ const changeImages = function (a, b) {
         let max = Math.floor(b.length - 1);
         let randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
         div.style.backgroundImage = `url('${b[randomIndex].url}')`;
-        div.render();
+        div.load();
 
     })
 }
