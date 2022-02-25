@@ -2,11 +2,11 @@
 Agency is a landing page of creative web production company.  I developed this website from PSD project as a part of weekly web dev challenge. 
 
 # Technologies
-HTML
-CSS (SASS)
-JavaScript
-Pixel Perfect
-RWD
+-HTML
+-CSS (SASS)
+-JavaScript
+-Pixel Perfect
+-RWD
 
 #Live Preview
 
